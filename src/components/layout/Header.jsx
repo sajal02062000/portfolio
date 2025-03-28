@@ -21,7 +21,7 @@ const Header = ({ currentTheme, typedText }) => {
     <header className="fixed top-0 left-0 right-0 bg-gray-900/80 backdrop-blur-sm z-40 border-b border-gray-800">
       <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
         <div className="text-2xl font-bold">
-          <span className={`bg-gradient-to-r from-${currentTheme.primary} to-${currentTheme.secondary} text-transparent bg-clip-text`}>
+          <span className={`text-${currentTheme.primary} bg-clip-text`}>
             Sajal Chandaiya
           </span>
         </div>

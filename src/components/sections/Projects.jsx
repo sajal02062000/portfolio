@@ -1,30 +1,61 @@
 import { motion } from 'framer-motion'
-import { Github, ExternalLink } from 'lucide-react'
+import { ExternalLink, Globe, Smartphone } from 'lucide-react'
 
 const projects = [
   {
-    title: "Project 1",
-    description: "A full-stack web application built with React, Node.js, and MongoDB. Features include user authentication, real-time updates, and responsive design.",
-    image: "/project1.jpg",
-    tags: ["React", "Node.js", "MongoDB", "Express"],
-    githubLink: "https://github.com/yourusername/project1",
-    liveLink: "https://project1.com"
+    title: "Fasalam",
+    description: "A Mobile application for a Farmers for Managing Their Farm, Mini E-commerce and Managing IOT Devices",
+    isMobile: true,
+    tags: ["Flutter", "Dart", "REST API", "BLE", "QR Code", "GetX", "Get Storage", "USB Serial Communication", "Maps Integration", "Notifications", "Geolocation"],
+    url: ["https://play.google.com/store/apps/details?id=com.fasalam.app", "https://apps.apple.com/in/app/fasalam/id6478108954"]
   },
   {
-    title: "Project 2",
-    description: "An e-commerce platform with advanced filtering, shopping cart functionality, and secure payment integration using Stripe.",
-    image: "/project2.jpg",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Stripe"],
-    githubLink: "https://github.com/yourusername/project2",
-    liveLink: "https://project2.com"
+    title: "Bazaar",
+    description: "An E-commerce website for Rashail Agro, a company that sells agricultural products and services.",
+    isMobile: false,
+    tags: ["React.js", "Tailwind CSS", "Framer Motion", "Vite", "Geolocation"],
+    url: ["https://bazaar.rashailagro.in/",]
   },
   {
-    title: "Project 3",
-    description: "A real-time chat application with features like group messaging, file sharing, and end-to-end encryption.",
-    image: "/project3.jpg",
-    tags: ["React", "Socket.io", "Node.js", "PostgreSQL"],
-    githubLink: "https://github.com/yourusername/project3",
-    liveLink: "https://project3.com"
+    title: "Jankalyanam",
+    description: "A company Landing Page for Jankalyanam, a company that sells Medical facilities, services and products.",
+    isMobile: false,
+    tags: ["React.js", "Tailwind CSS", "Framer Motion", "Vite", "Geolocation"],
+    url: ["http://jankalyanam.in/",]
+  },
+  {
+    title: "Jankalyanam Mobile App",
+    description: "A Mobile application for Jankalyanam, a company that sells Medical facilities, services and products.",
+    isMobile: true,
+    tags: ["Flutter", "Dart", "REST API", "GetX", "Get Storage", "Notifications", "Geolocation"],
+  },
+  {
+    title: "Raheja Solar Food Processing [Mobile App]",
+    description: "A company which is sponsored in Shark Tank India 2025, Developed a Mobile application for their business to manage their IOT Enabled Solar Dryers and manage customers as well as their orders.",
+    isMobile: true,
+    tags: ["Flutter", "Dart", "REST API", "GetX", "Get Storage", "Notifications", "Geolocation"],
+    url: ["https://play.google.com/store/apps/details?id=com.rashailinfotech.app.rsfp&hl=en_IN&pli=1",]
+  },
+  {
+    title: "GoWild-Destiny",
+    description: "A Mobile application for GoWild-Destiny, a company that sells Adventure and Travel services and products.",
+    isMobile: true,
+    tags: ["Flutter", "Dart", "REST API", "GetX", "Get Storage", "Notifications", "Geolocation", "Google Places API", "Street Maps"],
+    url: ["https://apps.apple.com/in/app/gowild-destiny/id6477920132", "https://play.google.com/store/apps/details?id=com.destiny.gowild&hl=en_IN"]
+  },
+  {
+    title: "HerbalKalp [E-commerce]",
+    description: "Static E-commerce website for HerbalKalp, a company that sells Ayurvedic Medicines and Syrups.",
+    isMobile: false,
+    tags: ["React.js", "Tailwind CSS", "Framer Motion", "Vite"],
+    url: ["https://herbalkalp-web.web.app/",]
+  },
+  {
+    title: "Future University Website",
+    description: "A static website for Future University, a university that provides various courses and services.",
+    isMobile: false,
+    tags: ["React", "Tailwind CSS", "Framer Motion", "Vite"],
+    url: ["https://futureuniversity.in/",]
   }
 ]
 
@@ -53,57 +84,49 @@ const Projects = ({ currentTheme }) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl overflow-hidden"
+                className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 hover:border-gray-600 transition-colors"
               >
-                <div className="relative aspect-video">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
-                    <div className="flex gap-4">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-xl font-semibold text-white">
+                    {project.title}
+                  </h3>
+                  <div className="flex flex-row gap-2 justify-end">
+                    {project.isMobile ? (
+                      <div className="flex items-center gap-2 text-gray-400">
+                        <Smartphone size={16} />
+                      </div>
+                    ) : (<div className="flex items-center gap-2 text-gray-400">
+                      <Globe size={16} />
+                    </div>)}
+                    {project.url && project.url.map((url, urlIndex) => (
                       <motion.a
-                        href={project.githubLink}
+                        key={urlIndex}
+                        href={url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-10 h-10 rounded-full bg-gray-800/80 flex items-center justify-center text-white hover:bg-gray-700 transition-colors"
+                        className={`w-8 h-8 rounded-full bg-${currentTheme.primary}/10 flex items-center justify-center text-${currentTheme.primary} hover:bg-${currentTheme.primary} hover:text-white transition-colors`}
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                       >
-                        <Github size={20} />
+                        <ExternalLink size={16} />
                       </motion.a>
-                      <motion.a
-                        href={project.liveLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-10 h-10 rounded-full bg-gray-800/80 flex items-center justify-center text-white hover:bg-gray-700 transition-colors"
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                      >
-                        <ExternalLink size={20} />
-                      </motion.a>
-                    </div>
+                    ))}
                   </div>
                 </div>
 
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2 text-white">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-400 mb-4">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map(tag => (
-                      <span
-                        key={tag}
-                        className={`px-3 py-1 text-sm rounded-full bg-${currentTheme.primary}/10 text-${currentTheme.primary}`}
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+                <p className="text-gray-300 mb-4">
+                  {project.description}
+                </p>
+
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map(tag => (
+                    <span
+                      key={tag}
+                      className={`px-3 py-1 text-sm rounded-full bg-${currentTheme.primary}/10 text-${currentTheme.primary}`}
+                    >
+                      {tag}
+                    </span>
+                  ))}
                 </div>
               </motion.div>
             ))}

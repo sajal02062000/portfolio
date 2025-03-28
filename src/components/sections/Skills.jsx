@@ -2,21 +2,41 @@ import { motion } from 'framer-motion'
 
 const skillCategories = [
   {
-    title: "Frontend",
+    title: "Web Development",
     skills: [
       { name: "React", level: 60 },
       { name: "JavaScript", level: 85 },
       { name: "HTML/CSS", level: 85 },
       { name: "Tailwind CSS", level: 65 },
+      { name: "Push Notifications", level: 65 },
+    ]
+  },
+  {
+    title: "Mobile Development",
+    skills: [
+      { name: "Flutter", level: 90 },
+      { name: "Dart", level: 90 },
+      { name: "Material UI", level: 85 },
+      { name: "Cupertino UI", level: 85 },
+      { name: "GetX", level: 90 },
+      { name: "Firebase", level: 85 },
+      { name: "Push Notifications", level: 85 },
     ]
   },
   {
     title: "Tools & Others",
     skills: [
+      { name: "Android Studio", level: 85 },
+      { name: "Xcode", level: 75 },
+      { name: "Figma", level: 55 },
+      { name: "Postman", level: 95 },
+      { name: "Photoshop", level: 45 },
+      { name: "Canva", level: 40 },
+      { name: "Adobe Dreamweaver", level: 45 },
       { name: "Git", level: 75 },
       { name: "Docker", level: 45 },
       { name: "AWS", level: 60 },
-      { name: "Digital Ocean",   level: 60 },
+      { name: "Digital Ocean", level: 60 },
       { name: "CI/CD", level: 35 },
     ]
   }
