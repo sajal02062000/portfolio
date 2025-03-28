@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Default theme colors */
+  --blue-500: #3B82F6;
+  --purple-500: #8B5CF6;
+  --emerald-500: #10B981;
+  --teal-500: #14B8A6;
+  --rose-500: #F43F5E;
+  --pink-500: #EC4899;
+  --amber-500: #F59E0B;
+  --orange-500: #F97316;
+  --yellow-500: #EAB308;
+  --cyan-500: #06B6D4;
+}
+
+body {
+  @apply text-white;
+}
+
+@layer base {
+  body {
+    @apply bg-gray-900 text-white;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500 animate-gradient;
+  }
+  
+  .hover-effect {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/20;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-blue-500 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-blue-600;
+}
