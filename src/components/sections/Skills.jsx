@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { Helmet } from 'react-helmet-async'
 
 const skillCategories = [
   {
@@ -45,6 +46,12 @@ const skillCategories = [
 const Skills = ({ currentTheme }) => {
   return (
     <section id="skills" className="py-20 relative">
+      <Helmet>
+        <title>Skills & Expertise | Sajal Chandaiya Portfolio</title>
+        <meta name="description" content="Explore Sajal Chandaiya's skills and expertise in web development, mobile development, and various tools including React, Flutter, JavaScript, and more." />
+        <meta name="keywords" content="Sajal Chandaiya, skills, expertise, React, Flutter, JavaScript, web development, mobile development" />
+      </Helmet>
+      
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

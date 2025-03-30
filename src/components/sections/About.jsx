@@ -1,9 +1,16 @@
 import { motion } from 'framer-motion'
 import { Code, Coffee, Heart, Sparkles } from 'lucide-react'
+import { Helmet } from 'react-helmet-async'
 
 const About = ({ currentTheme }) => {
   return (
     <section id="about" className="py-20 relative">
+      <Helmet>
+        <title>About Me | Sajal Chandaiya Portfolio</title>
+        <meta name="description" content="Learn about Sajal Chandaiya, a passionate software developer focused on creating elegant solutions with expertise in modern web technologies." />
+        <meta name="keywords" content="Sajal Chandaiya, about me, software developer, web developer, clean code, innovation" />
+      </Helmet>
+      
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

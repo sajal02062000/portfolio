@@ -1,9 +1,16 @@
 import { motion } from 'framer-motion'
 import { Mail, Phone, MapPin, Github, Linkedin, Twitter } from 'lucide-react'
+import { Helmet } from 'react-helmet-async'
 
 const Contact = ({ currentTheme }) => {
   return (
     <section id="contact" className="py-20 relative">
+      <Helmet>
+        <title>Contact | Sajal Chandaiya Portfolio</title>
+        <meta name="description" content="Get in touch with Sajal Chandaiya. Contact information and social media links for professional inquiries and collaboration opportunities." />
+        <meta name="keywords" content="Sajal Chandaiya, contact, email, phone, social media, GitHub, LinkedIn, Twitter" />
+      </Helmet>
+      
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -37,8 +44,8 @@ const Contact = ({ currentTheme }) => {
                   </div>
                   <div className="flex items-center justify-center gap-4">
                     <Phone className={`w-6 h-6 text-${currentTheme.primary}`} />
-                    <a href="tel:+919876543210" className="text-gray-300 hover:text-white transition-colors">
-                      +91 98765 43210
+                    <a href="tel:+9260960454" className="text-gray-300 hover:text-white transition-colors">
+                      +91 92609 60454
                     </a>
                   </div>
                   <div className="flex items-center justify-center gap-4">

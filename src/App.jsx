@@ -9,6 +9,7 @@ import About from './components/sections/About'
 import Skills from './components/sections/Skills'
 import Projects from './components/sections/Projects'
 import Contact from './components/sections/Contact'
+import SEO from './components/SEO'
 import {
   Download,
   MessageCircle
@@ -75,6 +76,8 @@ function App() {
 
   return (
     <div className={`min-h-screen bg-${currentTheme.background} relative overflow-hidden`}>
+      <SEO />
+      
       {/* Animated Background Shapes */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <motion.div

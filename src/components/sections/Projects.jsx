@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { ExternalLink, Globe, Smartphone } from 'lucide-react'
+import { Helmet } from 'react-helmet-async'
 
 const projects = [
   {
@@ -62,6 +63,12 @@ const projects = [
 const Projects = ({ currentTheme }) => {
   return (
     <section id="projects" className="py-20 relative">
+      <Helmet>
+        <title>Projects | Sajal Chandaiya Portfolio</title>
+        <meta name="description" content="Explore my portfolio of web and mobile applications including e-commerce platforms, management tools, and company websites." />
+        <meta name="keywords" content="Sajal Chandaiya, portfolio, projects, React, Flutter, mobile apps, web development" />
+      </Helmet>
+      
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
